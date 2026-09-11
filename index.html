@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyst Data Lab | Learn Data Analytics</title>
+    <meta name="description" content="Analyst Data Lab helps you learn practical data analytics through tutorials, projects, resources and career guidance.">
 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 8%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            background: #f1f5f9;
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.15rem;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 25px;
+            background: white;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        .about {
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 8%;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Analyst Data Lab</div>
+
+        <div>
+            <a href="#learn">Learn</a>
+            <a href="#projects">Projects</a>
+            <a href="#resources">Resources</a>
+            <a href="#careers">Careers</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Learn Data Analytics. Build Real Skills.</h1>
+
+    <p>
+        Practical tutorials, projects, resources and career guidance
+        to help you build the skills needed for a career in data.
+    </p>
+
+    <a href="#learn" class="button">Start Learning</a>
+</section>
+
+<section id="learn">
+    <div class="section-title">
+        <h2>Learn</h2>
+        <p>Build practical skills with tools used in real-world analytics.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Power BI</h3>
+            <p>Learn data modelling, DAX, dashboards and business reporting.</p>
+        </div>
+
+        <div class="card">
+            <h3>SQL</h3>
+            <p>Learn how to query, transform and analyse data with SQL.</p>
+        </div>
+
+        <div class="card">
+            <h3>Excel</h3>
+            <p>Build strong foundations in analysis, reporting and automation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Python</h3>
+            <p>Use Python and Pandas for practical data analysis.</p>
+        </div>
+
+        <div class="card">
+            <h3>Microsoft Fabric</h3>
+            <p>Explore modern analytics and data engineering with Fabric.</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="section-title">
+        <h2>Projects</h2>
+        <p>Learn by working through practical data projects and business problems.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Practical Projects</h3>
+            <p>Work with realistic datasets and business scenarios.</p>
+        </div>
+
+        <div class="card">
+            <h3>Case Studies</h3>
+            <p>Turn business questions into useful data insights.</p>
+        </div>
+
+        <div class="card">
+            <h3>Exercises</h3>
+            <p>Practice the skills you learn with hands-on challenges.</p>
+        </div>
+    </div>
+</section>
+
+<section id="resources">
+    <div class="section-title">
+        <h2>Resources</h2>
+        <p>Useful learning materials to help you keep progressing.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Tutorials</h3>
+            <p>Step-by-step guides for learning data analytics.</p>
+        </div>
+
+        <div class="card">
+            <h3>Learning Resources</h3>
+            <p>Curated resources for building your technical skills.</p>
+        </div>
+
+        <div class="card">
+            <h3>Community</h3>
+            <p>A place to learn, ask questions and share your progress.</p>
+        </div>
+    </div>
+</section>
+
+<section id="careers" class="about">
+    <div class="section-title">
+        <h2>Build Your Data Career</h2>
+    </div>
+
+    <p>
+        Analyst Data Lab is designed to help aspiring analysts move from
+        learning concepts to building practical skills they can use in
+        real-world data roles.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Analyst Data Lab</p>
+    <p>
+        <a href="mailto:analystdatalab@outlook.com">
+            analystdatalab@outlook.com
+        </a>
+    </p>
+</footer>
+
+</body>
+</html>
