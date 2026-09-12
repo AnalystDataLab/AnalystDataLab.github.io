@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Analyst Data Lab | Learn Data Analytics</title>
+    <title>Analyst Data Lab | Practical Data Analytics Education</title>
 
     <meta
         name="description"
-        content="Analyst Data Lab helps you learn practical data analytics through tutorials, projects, exercises, resources and career guidance."
+        content="Learn practical data analytics through Power BI, SQL, Excel, Python, Microsoft Fabric, projects, tutorials and career resources."
     >
 
+    <meta name="theme-color" content="#102a43">
+
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -39,27 +35,33 @@
             text-decoration: none;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-        /* =========================
-           HEADER
-        ========================= */
+        .container {
+            width: min(1180px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        /* HEADER */
 
         header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
-            max-width: 1180px;
-            margin: auto;
-            padding: 10px 24px;
-
+            min-height: 78px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 24px;
         }
 
         .brand {
@@ -67,18 +69,19 @@
             align-items: center;
             gap: 12px;
             color: #102a43;
+            flex-shrink: 0;
         }
 
         .brand-logo {
-            width: 64px;
-            height: 64px;
+            width: 58px;
+            height: 58px;
             object-fit: contain;
             border-radius: 50%;
         }
 
         .brand-name {
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 800;
             white-space: nowrap;
         }
 
@@ -109,10 +112,7 @@
             background: #1d4ed8;
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .hero {
             background:
@@ -127,34 +127,30 @@
                     #eef5ff 100%
                 );
 
-            padding: 90px 24px 100px;
+            padding: 90px 0 100px;
         }
 
         .hero-container {
-            max-width: 1180px;
-            margin: auto;
-
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-
-            gap: 60px;
+            gap: 70px;
             align-items: center;
         }
 
         .eyebrow {
             color: #2563eb;
-            font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 52px;
-            line-height: 1.1;
+            font-size: clamp(40px, 5vw, 58px);
+            line-height: 1.08;
             color: #102a43;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
         .hero h1 span {
@@ -162,9 +158,9 @@
         }
 
         .hero-text {
+            max-width: 650px;
             font-size: 19px;
             color: #526174;
-            max-width: 650px;
             margin-bottom: 32px;
         }
 
@@ -174,61 +170,58 @@
             flex-wrap: wrap;
         }
 
-        .primary-button {
-            background: #2563eb;
-            color: #ffffff;
+        .primary-button,
+        .secondary-button,
+        .career-button {
+            display: inline-block;
             padding: 14px 24px;
             border-radius: 8px;
             font-weight: 700;
-            display: inline-block;
+            transition: 0.2s ease;
+        }
+
+        .primary-button {
+            background: #2563eb;
+            color: #ffffff;
         }
 
         .primary-button:hover {
             background: #1d4ed8;
+            transform: translateY(-2px);
         }
 
         .secondary-button {
             background: #ffffff;
             color: #2563eb;
             border: 1px solid #cbd5e1;
-            padding: 14px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            display: inline-block;
         }
 
         .secondary-button:hover {
             background: #f8fafc;
+            transform: translateY(-2px);
         }
 
-
-        /* =========================
-           HERO LEARNING CARD
-        ========================= */
+        /* HERO CARD */
 
         .hero-card {
             background: #ffffff;
             border: 1px solid #dce5f0;
-            border-radius: 16px;
-            padding: 28px;
-
-            box-shadow:
-                0 18px 45px rgba(30, 64, 175, 0.10);
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 18px 45px rgba(30, 64, 175, 0.1);
         }
 
         .hero-card h3 {
             color: #102a43;
-            margin-bottom: 20px;
             font-size: 21px;
+            margin-bottom: 20px;
         }
 
         .learning-item {
             display: flex;
             align-items: center;
             gap: 14px;
-
-            padding: 13px 0;
-
+            padding: 14px 0;
             border-bottom: 1px solid #edf0f4;
         }
 
@@ -237,20 +230,17 @@
         }
 
         .learning-icon {
-            width: 40px;
-            height: 40px;
-
+            width: 42px;
+            height: 42px;
             background: #eff6ff;
             color: #2563eb;
-
-            border-radius: 8px;
-
+            border-radius: 9px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-weight: bold;
-            font-size: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
         .learning-item strong {
@@ -262,30 +252,23 @@
             color: #718096;
         }
 
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
+        /* SECTIONS */
 
         section {
-            padding: 80px 24px;
-        }
-
-        .container {
-            max-width: 1180px;
-            margin: auto;
+            padding: 85px 0;
         }
 
         .section-heading {
-            text-align: center;
             max-width: 700px;
-            margin: 0 auto 48px;
+            text-align: center;
+            margin: 0 auto 50px;
         }
 
         .section-heading h2 {
-            font-size: 34px;
             color: #102a43;
-            margin-bottom: 12px;
+            font-size: 36px;
+            line-height: 1.2;
+            margin-bottom: 14px;
         }
 
         .section-heading p {
@@ -293,10 +276,7 @@
             font-size: 17px;
         }
 
-
-        /* =========================
-           LEARNING PATHS
-        ========================= */
+        /* LEARNING PATHS */
 
         .learning-section {
             background: #ffffff;
@@ -309,35 +289,30 @@
         }
 
         .course-card {
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-
-            padding: 24px 18px;
-
             background: #ffffff;
-
-            transition:
-                transform 0.2s,
-                box-shadow 0.2s;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 26px 20px;
+            transition: 0.2s ease;
         }
 
         .course-card:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 12px 30px rgba(15, 23, 42, 0.08);
+            transform: translateY(-5px);
+            border-color: #bfdbfe;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         }
 
         .course-number {
             color: #2563eb;
             font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 15px;
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
         .course-card h3 {
             color: #102a43;
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .course-card p {
@@ -345,12 +320,10 @@
             font-size: 14px;
         }
 
+        /* LEARN BY DOING */
 
-        /* =========================
-           LEARN BY DOING
-        ========================= */
-
-        .why-section {
+        .why-section,
+        .resource-section {
             background: #f8fafc;
         }
 
@@ -363,31 +336,27 @@
         .feature-card {
             background: #ffffff;
             padding: 30px;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid #e2e8f0;
         }
 
         .feature-icon {
-            width: 46px;
-            height: 46px;
-
+            width: 48px;
+            height: 48px;
             background: #eff6ff;
             color: #2563eb;
-
             border-radius: 10px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
-            font-weight: bold;
-
+            font-weight: 800;
             margin-bottom: 20px;
         }
 
         .feature-card h3 {
             color: #102a43;
             margin-bottom: 10px;
+            font-size: 20px;
         }
 
         .feature-card p {
@@ -395,10 +364,7 @@
             font-size: 15px;
         }
 
-
-        /* =========================
-           PROJECTS
-        ========================= */
+        /* PROJECTS */
 
         .project-grid {
             display: grid;
@@ -408,9 +374,15 @@
 
         .project-card {
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
             background: #ffffff;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         }
 
         .project-top {
@@ -420,7 +392,8 @@
         }
 
         .project-top h3 {
-            margin-bottom: 5px;
+            margin-bottom: 7px;
+            font-size: 20px;
         }
 
         .project-top p {
@@ -429,13 +402,13 @@
         }
 
         .project-body {
-            padding: 24px;
+            padding: 25px;
         }
 
         .project-body p {
             color: #64748b;
             font-size: 15px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .project-link {
@@ -448,80 +421,53 @@
             color: #1d4ed8;
         }
 
-
-        /* =========================
-           RESOURCES
-        ========================= */
-
-        .resource-section {
-            background: #f8fafc;
-        }
-
-
-        /* =========================
-           CAREER CTA
-        ========================= */
+        /* CAREERS */
 
         .career-section {
-            padding: 80px 24px;
             background: #102a43;
             color: #ffffff;
         }
 
         .career-container {
-            max-width: 900px;
+            max-width: 850px;
             margin: auto;
             text-align: center;
         }
 
         .career-container h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
+            font-size: 38px;
+            line-height: 1.2;
+            margin-bottom: 16px;
         }
 
         .career-container p {
             color: #cbd5e1;
             font-size: 17px;
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
         .career-button {
-            display: inline-block;
-
             background: #ffffff;
             color: #102a43;
-
-            padding: 13px 24px;
-
-            border-radius: 8px;
-
-            font-weight: 700;
         }
 
         .career-button:hover {
             background: #e2e8f0;
+            transform: translateY(-2px);
         }
 
-
-        /* =========================
-           FOOTER
-        ========================= */
+        /* FOOTER */
 
         footer {
             background: #0b1729;
             color: #cbd5e1;
-            padding: 45px 24px;
+            padding: 50px 0 25px;
         }
 
         .footer-container {
-            max-width: 1180px;
-            margin: auto;
-
             display: flex;
             justify-content: space-between;
-
             gap: 40px;
-
             flex-wrap: wrap;
         }
 
@@ -532,28 +478,11 @@
         .footer-brand h3 {
             color: #ffffff;
             margin-bottom: 8px;
+            font-size: 20px;
         }
 
         .footer-brand p {
             font-size: 14px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 18px;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
         }
 
         .social-links {
@@ -574,30 +503,41 @@
             background: #1e3a5f;
         }
 
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
         .footer-bottom {
-            max-width: 1180px;
-            margin: 30px auto 0;
-
+            margin-top: 35px;
             padding-top: 20px;
-
             border-top: 1px solid #243247;
-
             font-size: 13px;
         }
 
+        /* MOBILE */
 
-        /* =========================
-           MOBILE
-        ========================= */
+        @media (max-width: 1050px) {
+            .course-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-        @media (max-width: 950px) {
-
+        @media (max-width: 850px) {
             .hero-container {
                 grid-template-columns: 1fr;
-            }
-
-            .course-grid {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
 
             .feature-grid,
@@ -605,27 +545,22 @@
                 grid-template-columns: 1fr;
             }
 
+            nav {
+                gap: 14px;
+            }
         }
 
-
-        @media (max-width: 700px) {
+        @media (max-width: 650px) {
+            .container {
+                width: min(100% - 32px, 1180px);
+            }
 
             .nav-container {
                 flex-direction: column;
-                gap: 12px;
-            }
-
-            .brand-name {
-                font-size: 18px;
-            }
-
-            .brand-logo {
-                width: 58px;
-                height: 58px;
+                padding: 12px 0;
             }
 
             nav {
-                gap: 12px;
                 justify-content: center;
                 flex-wrap: wrap;
             }
@@ -639,15 +574,19 @@
             }
 
             .hero {
-                padding: 60px 20px 70px;
+                padding: 60px 0 70px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 40px;
             }
 
             .hero-text {
                 font-size: 17px;
+            }
+
+            section {
+                padding: 65px 0;
             }
 
             .course-grid {
@@ -655,7 +594,7 @@
             }
 
             .section-heading h2 {
-                font-size: 29px;
+                font-size: 30px;
             }
 
             .career-container h2 {
@@ -670,27 +609,18 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header>
-
-        <div class="nav-container">
+        <div class="container nav-container">
 
             <a href="#" class="brand">
-
                 <img
                     src="logo.jpg"
                     alt="Analyst Data Lab logo"
@@ -700,489 +630,57 @@
                 <div class="brand-name">
                     Analyst Data Lab
                 </div>
-
             </a>
 
-
             <nav>
-
-                <a href="#learn">
-                    Learn
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#resources">
-                    Resources
-                </a>
-
-                <a href="#careers">
-                    Careers
-                </a>
+                <a href="#learn">Learn</a>
+                <a href="#projects">Projects</a>
+                <a href="#resources">Resources</a>
+                <a href="#careers">Careers</a>
 
                 <a href="#learn" class="nav-button">
                     Start Learning
                 </a>
-
             </nav>
 
         </div>
-
     </header>
 
 
+    <!-- HERO -->
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <main>
 
-    <section class="hero">
+        <section class="hero">
 
-        <div class="hero-container">
+            <div class="container hero-container">
 
+                <div>
 
-            <div>
-
-                <div class="eyebrow">
-                    Practical Data Analytics Education
-                </div>
-
-
-                <h1>
-                    Learn Data Analytics.
-                    <br>
-                    <span>Build Real Skills.</span>
-                </h1>
-
-
-                <p class="hero-text">
-
-                    Learn Power BI, SQL, Excel, Python and Microsoft Fabric
-                    through practical tutorials, projects, exercises and
-                    career-focused resources.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#learn"
-                        class="primary-button"
-                    >
-                        Explore Learning
-                    </a>
-
-
-                    <a
-                        href="#projects"
-                        class="secondary-button"
-                    >
-                        View Projects
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- LEARNING CARD -->
-
-            <div class="hero-card">
-
-                <h3>
-                    What You'll Learn
-                </h3>
-
-
-                <div class="learning-item">
-
-                    <div class="learning-icon">
-                        BI
+                    <div class="eyebrow">
+                        Practical Data Analytics Education
                     </div>
 
-                    <div>
+                    <h1>
+                        Learn Data Analytics.
+                        <br>
+                        <span>Build Real Skills.</span>
+                    </h1>
 
-                        <strong>
-                            Power BI
-                        </strong>
-
-                        <small>
-                            Dashboards, DAX & modelling
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="learning-item">
-
-                    <div class="learning-icon">
-                        SQL
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            SQL
-                        </strong>
-
-                        <small>
-                            Querying & data analysis
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="learning-item">
-
-                    <div class="learning-icon">
-                        EX
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Excel
-                        </strong>
-
-                        <small>
-                            Analysis & reporting
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="learning-item">
-
-                    <div class="learning-icon">
-                        PY
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Python
-                        </strong>
-
-                        <small>
-                            Python & Pandas
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="learning-item">
-
-                    <div class="learning-icon">
-                        MF
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Microsoft Fabric
-                        </strong>
-
-                        <small>
-                            Analytics & data engineering
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         LEARN
-    ========================= -->
-
-    <section id="learn" class="learning-section">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    Start Building Your Skills
-                </h2>
-
-                <p>
-                    Learn the tools and concepts that form the foundation
-                    of modern data analytics.
-                </p>
-
-            </div>
-
-
-
-            <div class="course-grid">
-
-
-                <div class="course-card">
-
-                    <div class="course-number">
-                        01
-                    </div>
-
-                    <h3>
-                        Power BI
-                    </h3>
-
-                    <p>
-                        Build dashboards, analyse data and communicate insights.
+                    <p class="hero-text">
+                        Learn Power BI, SQL, Excel, Python and Microsoft Fabric
+                        through practical tutorials, projects, exercises and
+                        career-focused resources.
                     </p>
 
-                </div>
+                    <div class="hero-buttons">
 
+                        <a href="#learn" class="primary-button">
+                            Explore Learning
+                        </a>
 
-
-                <div class="course-card">
-
-                    <div class="course-number">
-                        02
-                    </div>
-
-                    <h3>
-                        SQL
-                    </h3>
-
-                    <p>
-                        Learn to retrieve, transform and analyse data.
-                    </p>
-
-                </div>
-
-
-
-                <div class="course-card">
-
-                    <div class="course-number">
-                        03
-                    </div>
-
-                    <h3>
-                        Excel
-                    </h3>
-
-                    <p>
-                        Develop strong foundations in data analysis and reporting.
-                    </p>
-
-                </div>
-
-
-
-                <div class="course-card">
-
-                    <div class="course-number">
-                        04
-                    </div>
-
-                    <h3>
-                        Python
-                    </h3>
-
-                    <p>
-                        Use Python and Pandas to work with real datasets.
-                    </p>
-
-                </div>
-
-
-
-                <div class="course-card">
-
-                    <div class="course-number">
-                        05
-                    </div>
-
-                    <h3>
-                        Microsoft Fabric
-                    </h3>
-
-                    <p>
-                        Explore modern analytics and data engineering.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         LEARN BY DOING
-    ========================= -->
-
-    <section class="why-section">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    Learn by Doing
-                </h2>
-
-                <p>
-                    Move beyond watching tutorials. Build, practise and
-                    solve realistic data problems.
-                </p>
-
-            </div>
-
-
-
-            <div class="feature-grid">
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        01
-                    </div>
-
-                    <h3>
-                        Practical Tutorials
-                    </h3>
-
-                    <p>
-                        Step-by-step lessons focused on skills you can
-                        actually use.
-                    </p>
-
-                </div>
-
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        02
-                    </div>
-
-                    <h3>
-                        Real Projects
-                    </h3>
-
-                    <p>
-                        Work through realistic datasets, business questions
-                        and analytics problems.
-                    </p>
-
-                </div>
-
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        03
-                    </div>
-
-                    <h3>
-                        Career Guidance
-                    </h3>
-
-                    <p>
-                        Learn how to turn your technical skills into a
-                        practical data career.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         PROJECTS
-    ========================= -->
-
-    <section id="projects">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    Practice With Projects
-                </h2>
-
-                <p>
-                    Build your confidence by solving practical business
-                    and data problems.
-                </p>
-
-            </div>
-
-
-
-            <div class="project-grid">
-
-
-                <div class="project-card">
-
-                    <div class="project-top">
-
-                        <h3>
-                            Data Analytics Projects
-                        </h3>
-
-                        <p>
-                            Beginner to Intermediate
-                        </p>
-
-                    </div>
-
-
-                    <div class="project-body">
-
-                        <p>
-                            Analyse realistic datasets and create useful
-                            business insights.
-                        </p>
-
-                        <a
-                            href="#resources"
-                            class="project-link"
-                        >
-                            Explore resources →
+                        <a href="#projects" class="secondary-button">
+                            View Projects
                         </a>
 
                     </div>
@@ -1190,228 +688,381 @@
                 </div>
 
 
+                <div class="hero-card">
 
-                <div class="project-card">
+                    <h3>
+                        What You'll Learn
+                    </h3>
 
-                    <div class="project-top">
+                    <div class="learning-item">
+                        <div class="learning-icon">BI</div>
 
-                        <h3>
-                            Business Case Studies
-                        </h3>
-
-                        <p>
-                            Problem → Analysis → Insight
-                        </p>
-
+                        <div>
+                            <strong>Power BI</strong>
+                            <small>Dashboards, DAX and modelling</small>
+                        </div>
                     </div>
 
+                    <div class="learning-item">
+                        <div class="learning-icon">SQL</div>
 
-                    <div class="project-body">
-
-                        <p>
-                            Learn how analysts approach real business
-                            questions using data.
-                        </p>
-
-                        <a
-                            href="#resources"
-                            class="project-link"
-                        >
-                            Explore resources →
-                        </a>
-
+                        <div>
+                            <strong>SQL</strong>
+                            <small>Querying and data analysis</small>
+                        </div>
                     </div>
 
-                </div>
+                    <div class="learning-item">
+                        <div class="learning-icon">EX</div>
 
-
-
-                <div class="project-card">
-
-                    <div class="project-top">
-
-                        <h3>
-                            Hands-On Exercises
-                        </h3>
-
-                        <p>
-                            Practice Your Skills
-                        </p>
-
+                        <div>
+                            <strong>Excel</strong>
+                            <small>Analysis and reporting</small>
+                        </div>
                     </div>
 
+                    <div class="learning-item">
+                        <div class="learning-icon">PY</div>
 
-                    <div class="project-body">
+                        <div>
+                            <strong>Python</strong>
+                            <small>Python and Pandas</small>
+                        </div>
+                    </div>
 
-                        <p>
-                            Strengthen your skills through practical
-                            analytics challenges.
-                        </p>
+                    <div class="learning-item">
+                        <div class="learning-icon">MF</div>
 
-                        <a
-                            href="#resources"
-                            class="project-link"
-                        >
-                            Explore resources →
-                        </a>
-
+                        <div>
+                            <strong>Microsoft Fabric</strong>
+                            <small>Analytics and data engineering</small>
+                        </div>
                     </div>
 
                 </div>
-
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
+        <!-- LEARNING PATHS -->
 
-    <!-- =========================
-         RESOURCES
-    ========================= -->
+        <section id="learn" class="learning-section">
 
-    <section id="resources" class="resource-section">
+            <div class="container">
 
-        <div class="container">
+                <div class="section-heading">
+                    <h2>Start Building Your Skills</h2>
+
+                    <p>
+                        Learn the tools and concepts that form the foundation
+                        of modern data analytics.
+                    </p>
+                </div>
 
 
-            <div class="section-heading">
+                <div class="course-grid">
+
+                    <div class="course-card">
+                        <div class="course-number">01</div>
+                        <h3>Power BI</h3>
+                        <p>
+                            Build dashboards, analyse data and communicate insights.
+                        </p>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-number">02</div>
+                        <h3>SQL</h3>
+                        <p>
+                            Learn to retrieve, transform and analyse data.
+                        </p>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-number">03</div>
+                        <h3>Excel</h3>
+                        <p>
+                            Develop strong foundations in analysis and reporting.
+                        </p>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-number">04</div>
+                        <h3>Python</h3>
+                        <p>
+                            Use Python and Pandas to work with real datasets.
+                        </p>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-number">05</div>
+                        <h3>Microsoft Fabric</h3>
+                        <p>
+                            Explore modern analytics and data engineering.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARN BY DOING -->
+
+        <section class="why-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Learn by Doing</h2>
+
+                    <p>
+                        Move beyond watching tutorials. Build, practise and
+                        solve realistic data problems.
+                    </p>
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+                        <div class="feature-icon">01</div>
+
+                        <h3>Practical Tutorials</h3>
+
+                        <p>
+                            Step-by-step lessons focused on skills you can
+                            actually use.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">02</div>
+
+                        <h3>Real Projects</h3>
+
+                        <p>
+                            Work through realistic datasets, business questions
+                            and analytics problems.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">03</div>
+
+                        <h3>Career Guidance</h3>
+
+                        <p>
+                            Learn how to turn your technical skills into a
+                            practical data career.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Practice With Projects</h2>
+
+                    <p>
+                        Build your confidence by solving practical business
+                        and data problems.
+                    </p>
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            <h3>Data Analytics Projects</h3>
+                            <p>Beginner to Intermediate</p>
+                        </div>
+
+                        <div class="project-body">
+                            <p>
+                                Analyse realistic datasets and create useful
+                                business insights.
+                            </p>
+
+                            <a href="#resources" class="project-link">
+                                Explore projects →
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            <h3>Business Case Studies</h3>
+                            <p>Problem → Analysis → Insight</p>
+                        </div>
+
+                        <div class="project-body">
+                            <p>
+                                Learn how analysts approach real business
+                                questions using data.
+                            </p>
+
+                            <a href="#resources" class="project-link">
+                                Explore case studies →
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-top">
+                            <h3>Hands-On Exercises</h3>
+                            <p>Practice Your Skills</p>
+                        </div>
+
+                        <div class="project-body">
+                            <p>
+                                Strengthen your skills through practical
+                                analytics challenges.
+                            </p>
+
+                            <a href="#resources" class="project-link">
+                                Explore exercises →
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESOURCES -->
+
+        <section id="resources" class="resource-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Resources for Your Journey</h2>
+
+                    <p>
+                        Useful learning materials to help you keep progressing.
+                    </p>
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">T</div>
+
+                        <h3>Tutorials</h3>
+
+                        <p>
+                            Practical guides covering analytics tools,
+                            techniques and workflows.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">R</div>
+
+                        <h3>Learning Resources</h3>
+
+                        <p>
+                            Curated resources to help you learn more efficiently.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">C</div>
+
+                        <h3>Community</h3>
+
+                        <p>
+                            A place for learners to ask questions, share
+                            progress and learn together.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAREERS -->
+
+        <section id="careers" class="career-section">
+
+            <div class="container career-container">
 
                 <h2>
-                    Resources for Your Journey
+                    Build Skills for a Data Career
                 </h2>
 
                 <p>
-                    Useful learning materials to help you keep progressing.
+                    Analyst Data Lab helps aspiring data professionals move
+                    from learning concepts to applying them through practical
+                    projects and real-world problems.
                 </p>
 
-            </div>
-
-
-
-            <div class="feature-grid">
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        T
-                    </div>
-
-                    <h3>
-                        Tutorials
-                    </h3>
-
-                    <p>
-                        Practical guides covering analytics tools,
-                        techniques and workflows.
-                    </p>
-
-                </div>
-
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        R
-                    </div>
-
-                    <h3>
-                        Learning Resources
-                    </h3>
-
-                    <p>
-                        Curated resources to help you learn more efficiently.
-                    </p>
-
-                </div>
-
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">
-                        C
-                    </div>
-
-                    <h3>
-                        Community
-                    </h3>
-
-                    <p>
-                        A place for learners to ask questions,
-                        share progress and learn together.
-                    </p>
-
-                </div>
-
+                <a
+                    href="mailto:analystdatalab@outlook.com"
+                    class="career-button"
+                >
+                    Contact Analyst Data Lab
+                </a>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-
-
-
-    <!-- =========================
-         CAREERS
-    ========================= -->
-
-    <section id="careers" class="career-section">
-
-        <div class="career-container">
+    </main>
 
 
-            <h2>
-                Build Skills for a Data Career
-            </h2>
-
-
-            <p>
-
-                Analyst Data Lab helps aspiring data professionals
-                move from learning concepts to applying them through
-                practical projects and real-world problems.
-
-            </p>
-
-
-            <a
-                href="mailto:analystdatalab@outlook.com"
-                class="career-button"
-            >
-                Contact Analyst Data Lab
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="footer-container">
-
+        <div class="container footer-container">
 
             <div class="footer-brand">
 
-                <h3>
-                    Analyst Data Lab
-                </h3>
+                <h3>Analyst Data Lab</h3>
 
                 <p>
-                    Practical data analytics education for people
-                    building real-world skills.
+                    Practical data analytics education for people building
+                    real-world skills.
                 </p>
 
 
@@ -1424,7 +1075,6 @@
                     >
                         Instagram
                     </a>
-
 
                     <a
                         href="https://www.tiktok.com/@analystdatalab"
@@ -1439,20 +1089,12 @@
             </div>
 
 
-
             <div class="footer-links">
 
-                <a href="#learn">
-                    Learn
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#resources">
-                    Resources
-                </a>
+                <a href="#learn">Learn</a>
+                <a href="#projects">Projects</a>
+                <a href="#resources">Resources</a>
+                <a href="#careers">Careers</a>
 
                 <a href="mailto:analystdatalab@outlook.com">
                     Contact
@@ -1460,19 +1102,16 @@
 
             </div>
 
-
         </div>
 
 
-
-        <div class="footer-bottom">
+        <div class="container footer-bottom">
 
             © 2026 Analyst Data Lab. All rights reserved.
 
         </div>
 
     </footer>
-
 
 </body>
 </html>
